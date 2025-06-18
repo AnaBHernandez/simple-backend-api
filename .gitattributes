@@ -1,0 +1,10 @@
+# .gitignore para proyectos Maven/Spring Boot
+/.idea/             # Ignora los archivos de configuración de IntelliJ IDEA
+/.vscode/           # Ignora los archivos de configuración de VS Code
+/target/            # Ignora la carpeta donde se genera el JAR y otros compilados
+/.mvn/wrapper/maven-wrapper.jar
+!/.mvn/wrapper/maven-wrapper.properties
+.iml                # Ignora los archivos de módulo de IntelliJ
+.DS_Store           # Ignora archivos de macOS
+*.log               # Ignora archivos de log
+*.class             # Ignora archivos de clase Java compilados
