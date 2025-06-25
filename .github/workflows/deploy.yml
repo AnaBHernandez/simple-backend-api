@@ -6,19 +6,19 @@ on:
       - main # O la rama que uses para despliegues
 
 env:
-  [cite_start]AWS_REGION: us-west-1 # Tu región: Norte de California [cite: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  [cite_start]ECR_REPOSITORY: simple-backend-api # Nombre de tu repositorio ECR [cite: 10]
-  [cite_start]ECS_SERVICE: simple-backend-api-service-Ana-Belen # Nombre de tu servicio ECS [cite: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  [cite_start]ECS_CLUSTER: simple-backend-cluster-Ana-Belen # Nombre de tu clúster ECS [cite: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  [cite_start]ECS_TASK_DEFINITION: simple-backend-api-task-definition-Ana-Belen # Nombre de tu familia de definición de tarea [cite: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-  [cite_start]CONTAINER_NAME: simple-backend-api-container # Nombre de tu contenedor en la definición de tarea [cite: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  AWS_REGION: us-west-1
+  ECR_REPOSITORY: simple-backend-api
+  ECS_SERVICE: simple-backend-api-service-Ana-Belen
+  ECS_CLUSTER: simple-backend-cluster-Ana-Belen
+  ECS_TASK_DEFINITION: simple-backend-api-task-definition-Ana-Belen
+  CONTAINER_NAME: simple-backend-api-container
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
-      id-token: write # Necesario para OpenID Connect (OIDC)
+      id-token: write 
       contents: read
     
     steps:
@@ -28,7 +28,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        [cite_start]role-to-assume: arn:aws:iam::577644414877:role/GitHubActionsECSRole-AnaBelen # Tu ID de cuenta AWS y nombre del rol [cite: 13]
+        role-to-assume: arn:aws:iam::577644414877:role/GitHubActionsECSRole-AnaBelen 
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Login to Amazon ECR
